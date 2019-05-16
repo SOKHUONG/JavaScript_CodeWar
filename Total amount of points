@@ -1,0 +1,15 @@
+function points(games) {
+  let score =0;
+let check=[];
+for(let i=0;i<games.length;i++){
+    check.push(games[i].split(':'));
+}
+for(let i=0;i<games.length;i++){
+    for(let j=0;j<2;j++){
+        if(check[i][j]>check[i][j+1])       score+=3;
+        else if(check[i][j]<check[i][j+1])  score+=0;
+        else if(check[i][j]==check[i][j+1]) score+=1;
+    }
+}
+return score;
+}
